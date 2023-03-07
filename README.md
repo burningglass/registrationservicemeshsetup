@@ -54,7 +54,8 @@ Now from VS Code Terminal (or a Command Prompt) check Python is executable on th
 | python | c:\users\uname\AppData\Local\Microsoft\WindowsApps |
 | pip | c:\users\uname\AppData\Local\Microsoft\WindowsApps |
 
-Type 'python' on the Command Prompt to check the version, e.g. 3.10.7<br/>
+Type 'python' on the Command Prompt to check the version, e.g. 3.10.7:
+
 `python`</br>
 `quit()`
 
