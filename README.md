@@ -1,4 +1,4 @@
-Registration Application Service Mesh Set-up
+# Registration Application Service Mesh Set-up
 
 Base instructions and initial scripts to create and configure a simple service mesh in Kubernetes Engine (GCloud)
 
@@ -54,7 +54,7 @@ Now from VS Code Terminal (or a Command Prompt) check Python is executable on th
 | python | c:\users\uname\AppData\Local\Microsoft\WindowsApps |
 | pip | c:\users\uname\AppData\Local\Microsoft\WindowsApps |
 
-Type 'python' on the Command Prompt to check the version, e.g. 3.10.7
+Type 'python' on the Command Prompt to check the version, e.g. 3.10.7<br/>
 `python`</br>
 `quit()`
 
@@ -77,5 +77,5 @@ Install 64bit if possible
 
 Issue these Command Prompt commands to check Node.js installed correctly:
 
-`node -v` (or `node -version`) ...e.g. reveals v16.3.0
+`node -v` (or `node -version`) ...e.g. reveals v16.3.0<br/>
 `node -p "process.arch"` ...e.g. reveals x64
