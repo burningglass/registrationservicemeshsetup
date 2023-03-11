@@ -37,11 +37,28 @@ Install from here:
 
 [VS Code download](https://code.visualstudio.com/download)
 
-### 3.2 Install Python Intellisense
+### 3.2 Terminal usage
+
+The VS Code Terminal is available from the main menu in Windows, but in MacOS, you should activate it using the keyboard command: `⌘+`(backtick)`
+
+Better in MacOS is to install a first class alternative like iTerm2:
+
+[Terminal software for MacOS](https://https://iterm2.com/)
+
+iTerm2 commands:
+- ⌘+D:		Vertifical window split
+- ⌘+Shift+D:	Horizontal window split
+- ⌘+[:		Switch to previous window pane
+- ⌘+]:		Switch to next window pane
+- ⌘+Shift+T:	New tab
+- ⌘+Shift+[:	Switch to previous tab
+- ⌘+Shift+]:	Switch to next tab
+
+### 3.3 Install Python Intellisense
 
 ![Installing Python Intellisense](README.images/Picture4.png)
 
-### 3.3 Separately Install Python Runtime
+### 3.4 Separately Install Python Runtime
 
 Install from here:
 
@@ -59,7 +76,7 @@ Type 'python' on the Command Prompt to check the version, e.g. 3.10.7:
 `python`</br>
 `quit()`
 
-### 3.4 Configure VS Code to use the Python Interpreter
+### 3.5 Configure VS Code to use the Python Interpreter
 
 In VS Code:
 
@@ -68,7 +85,7 @@ In VS Code:
 
 ![Setting Python Interpreter in VS Code](README.images/Picture5.png)
 
-### 3.5 Separately Install Node.js
+### 3.6 Separately Install Node.js
 
 Install from here:
 
