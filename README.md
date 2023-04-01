@@ -30,7 +30,7 @@ Replace [PROJECT_ID] with your project in the following script before running it
 
 `kubectl describe controlplanerevision asm-managed -n istio-system`
 
-i.e. Google's asmcli already created the ControlPlaneRevision custom resource in the cluster.
+i.e. Google's asmcli already created the ControlPlaneRevision custom resource in the cluster
 
 ### 2.2 Inject sidecar proxies with Anthos Service Mesh
 
@@ -46,7 +46,11 @@ e.g.
 
 `kubectl label namespace default istio-injection- istio.io/rev=asm-managed --overwrite`
 
-The additional label show then be showing on the Kubernetes namespace:
+The following command should reveal the additional label now assigned to this K8s namespace:
+
+`kubectl get namespace default --show-labels`
+
+i.e.
 
 ![Namespace is Anthos(Istio)-enabled](README.images/Picture6.png)
 
