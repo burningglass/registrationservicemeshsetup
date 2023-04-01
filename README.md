@@ -12,9 +12,9 @@ This section explains development tools, Kubernetes Engine and Anthos Service Me
 
 ### 1.2 Connect to the K8s cluster
 
-![Connecting to GKE context](README.images/Picture2.png)
+![Connecting to K8s cluster](README.images/Picture2.png)
 
-![Connecting to GKE context](README.images/Picture3.png)
+![Connecting to K8s cluster](README.images/Picture3.png)
 
 ### 1.3 Establish the Service Accounts
 
@@ -24,20 +24,46 @@ Replace [PROJECT_ID] with your project in the following script before running it
 
 [Service Accounts set-up script](https://github.com/burningglass/registrationservicemeshsetup/blob/main/createAndPermissionServiceMeshAccounts.sh)
 
-## 2 Install GIT for Windows
+## 2 Enable the Anthos(Istio) Service Mesh
+
+### 2.1 Verify Anthos support was pre-integrated into the cluster
+
+`kubectl describe controlplanerevision asm-managed -n istio-system`
+
+i.e. Google's asmcli already created the ControlPlaneRevision custom resource in the cluster.
+
+### 2.2 Inject sidecar proxies with Anthos Service Mesh
+
+The following will reveal the name (e.g. 'asm-managed') which will be used for REVISION (next step):
+
+`kubectl -n istio-system get controlplanerevision`
+
+### 2.3 Add the Istio label to the GCloud K8s namespace:
+
+`kubectl label namespace NAMESPACE istio-injection- istio.io/rev=REVISION --overwrite`
+
+e.g.
+
+`kubectl label namespace default istio-injection- istio.io/rev=asm-managed --overwrite`
+
+The additional label show then be showing on the Kubernetes namespace:
+
+![Namespace is Anthos(Istio)-enabled](README.images/Picture6.png)
+
+## 3 Install GIT for Windows
 
 - [In Windows] https://gitforwindows.org/
 - [In MacOS] https://git-scm.com/download/mac (i.e. install Homebrew (https://brew.sh/), then:  brew install git)
 
-## 3 Install Developer Tools
+## 4 Install Developer Tools
 
-### 3.1 Visual Studio Code installation
+### 4.1 Visual Studio Code installation
 
 Install from here:
 
 [VS Code download](https://code.visualstudio.com/download)
 
-### 3.2 Terminal usage
+### 4.2 Terminal usage
 
 The VS Code Terminal is available from the main menu in Windows, but in MacOS, you should activate it using the keyboard command: `⌘+`(backtick)`
 
@@ -54,11 +80,11 @@ iTerm2 commands:
 - ⌘+Shift+[:	Switch to previous tab
 - ⌘+Shift+]:	Switch to next tab
 
-### 3.3 Install Python Intellisense
+### 4.3 Install Python Intellisense
 
 ![Installing Python Intellisense](README.images/Picture4.png)
 
-### 3.4 Separately Install Python Runtime
+### 4.4 Separately Install Python Runtime
 
 Install from here:
 
@@ -76,7 +102,7 @@ Type 'python' on the Command Prompt to check the version, e.g. 3.10.7:
 `python`</br>
 `quit()`
 
-### 3.5 Configure VS Code to use the Python Interpreter
+### 4.5 Configure VS Code to use the Python Interpreter
 
 In VS Code:
 
@@ -85,7 +111,7 @@ In VS Code:
 
 ![Setting Python Interpreter in VS Code](README.images/Picture5.png)
 
-### 3.6 Separately Install Node.js
+### 4.6 Separately Install Node.js
 
 Install from here:
 
