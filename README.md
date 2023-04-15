@@ -72,7 +72,7 @@ The following will reveal the name (e.g. 'asm-managed') which will be used for R
 
 `kubectl -n istio-system get controlplanerevision`
 
-### 3.3 Add the Istio label to the GCloud K8s namespace:
+### 3.3 Add the Istio label to the GCloud K8s namespace
 
 `kubectl label namespace NAMESPACE istio-injection- istio.io/rev=REVISION --overwrite`
 
